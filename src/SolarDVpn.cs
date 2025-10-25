@@ -17,21 +17,21 @@ namespace SolarDVpnApi
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
-        public async Task<string> getDeviceToken()
+        public async Task<string> GetDeviceToken()
         {
             var jsonContent = JsonContent.Create(new {platform = "ANDROID"});
             var response = await httpClient.PostAsync($"{apiUrl}/device", jsonContent);
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
-        public async Task<string> getCurrentIp()
+        public async Task<string> GetCurrentIp()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/vpn/ip");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> getCountries()
+        public async Task<string> GetCountries()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/vpn/countries");
             response.EnsureSuccessStatusCode();
