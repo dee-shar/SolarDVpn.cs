@@ -14,7 +14,7 @@ namespace Application
         static async Task Main()
         {
             var api = new SolarDVpn();
-            string currentIp = await api.getCurrentIp();
+            string currentIp = await api.GetCurrentIp();
             Console.WriteLine(currentIp);
         }
     }
