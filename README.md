@@ -5,7 +5,6 @@ Mobile-API for [SOLAR dVPN](https://play.google.com/store/apps/details?id=ee.sol
 ```cs
 using System;
 using SolarDVpnApi;
-using System.Threading.Tasks;
 
 namespace Application
 {
