@@ -1,8 +1,7 @@
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Threading.Tasks;
+using System.Net.Http.Headers;
 
 namespace SolarDVpnApi
 {
@@ -21,20 +20,17 @@ namespace SolarDVpnApi
         {
             var jsonContent = JsonContent.Create(new {platform = "ANDROID"});
             var response = await httpClient.PostAsync($"{apiUrl}/device", jsonContent);
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
         public async Task<string> GetCurrentIp()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/vpn/ip");
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
 
         public async Task<string> GetCountries()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/vpn/countries");
-            response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
     }
