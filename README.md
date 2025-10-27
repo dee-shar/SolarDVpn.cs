@@ -3,7 +3,6 @@ Mobile-API for [SOLAR dVPN](https://play.google.com/store/apps/details?id=ee.sol
 
 ## Example
 ```cs
-using System;
 using SolarDVpnApi;
 
 namespace Application
